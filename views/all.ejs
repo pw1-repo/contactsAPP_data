@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+<div class="container bg-dark text-white rounded">
+  <main>
+    <h1><%=title%></h1>
+    <hr>
+    <div class="container m-10">
+      <p class="display-6">Lista de contatos</p>
+      <table class="table">
+        <tbody>
+        <% contacts.forEach(c => { %>
+          <tr>
+            <th scope="row"><%= c.nome %></th>
+            <td><a href="/form/"><img src="https://www.svgrepo.com/show/502644/edit.svg" width="30px"></a></td>
+            <td><a href="/single/<%= c._id %>"><img src="https://www.svgrepo.com/show/36202/searching-a-person.svg" width="30px"></a></td>
+            <td><a href="/delete/<%= c.nome %>"><img src="https://www.svgrepo.com/show/488148/delete.svg" width="30px"></a></td>
+            <td>
+              <% if (c.favorito) { %>
+                <img src="https://www.svgrepo.com/show/487368/favorite-profile.svg" alt="Favorito" width="30px">
+              <% } %>
+            </td>
+            </tr>
+        <% }) %>
+        </tbody>
+      </table>
+
+    </div>
+</div>
+<%- include('partials/footer') %>
