@@ -10,7 +10,7 @@
         <% contacts.forEach(c => { %>
           <tr>
             <th scope="row"><%= c.nome %></th>
-            <td><a href="/form/"><img src="https://www.svgrepo.com/show/502644/edit.svg" width="30px"></a></td>
+            <td><a href="/form/<%= c._id %>"><img src="https://www.svgrepo.com/show/502644/edit.svg" width="30px"></a></td>
             <td><a href="/single/<%= c._id %>"><img src="https://www.svgrepo.com/show/36202/searching-a-person.svg" width="30px"></a></td>
             <td><a href="/delete/<%= c.nome %>"><img src="https://www.svgrepo.com/show/488148/delete.svg" width="30px"></a></td>
             <td>

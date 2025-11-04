@@ -13,7 +13,6 @@ router.get('/:nome', async function(req, res, next) {
     } else {
     msg_ = `<div class="alert alert-danger" role="alert">Erro ao deletar contato ${nome}!</div>`;
   }
-
   //console.log(contacts_)
   res.render('result', { title: 'contactsApp', msg: msg_ });
 });

@@ -46,9 +46,9 @@ class contactsDAO {
     }
 
     // UPDATE
-    static async updateTelefoneByEmail(client, olde, tel) {
+    static async updateByTelefone(client, tel, doc) {
         const docs = await client
-        .updateOne(olde, tel)
+        .updateOne(tel, doc)
         try {
             return docs
         } catch(err) {

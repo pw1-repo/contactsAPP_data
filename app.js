@@ -22,6 +22,7 @@ var helpRouter = require('./routes/help');
 var privacyRouter = require('./routes/privacy');
 var cookiesRouter = require('./routes/cookies');
 var deleteRouter = require('./routes/delete');
+var formRouter = require('./routes/form');
 
 var app = express();
 
@@ -43,6 +44,7 @@ app.use('/help', helpRouter);
 app.use('/privacy', privacyRouter);
 app.use('/cookies', cookiesRouter);
 app.use('/delete', deleteRouter);
+app.use('/form', formRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -8,11 +8,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/', async function(req, res, next) {
-  const { nome, email, fone, favorito } = req.body;
+  const { nome, email, telefone, favorito } = req.body;
   const contactData = {
     nome,
     email,
-    fone,
+    telefone,
     favorito: favorito ? true : false
   };
   // console.log(contactData);
