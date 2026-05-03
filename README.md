@@ -29,7 +29,7 @@ Aplicação de demonstração `contactsApp` utilizada na disciplina Programaçã
 
 1. Clonar o repositório do projeto:
    ```bash
-   git clone XXXXX
+   git clone https://github.com/pw1-repo/contactsApp.git
    ```
 
 2. Instalar as dependências
@@ -83,16 +83,11 @@ Aplicação de demonstração `contactsApp` utilizada na disciplina Programaçã
 |-------|--------|-------------|
 | `/` | GET | Página inicial com mensagem de boas-vindas |
 | `/all` | GET | Exibir todos os contatos em grade de cartões (3 por linha) |
-| `/single/:id` | GET | Visualizar detalhes de um único contato |
-| `/add` | GET | Exibir formulário para adicionar novo contato |
-| `/add` | POST | Enviar novo contato |
 | `/form/:id` | GET | Exibir formulário para editar contato existente |
 | `/form` | POST | Enviar atualizações de contato |
 | `/delete/:name` | GET | Deletar contato por nome |
 | `/toggle_favorito` | GET | Alternar status de favorito do contato (parâmetro de query: `nome`) |
 | `/help` | GET | Página de ajuda |
-| `/privacy` | GET | Página de política de privacidade |
-| `/cookies` | GET | Página de informações sobre cookies |
 | `/team` | GET | Página de informações do time |
 | `/stack` | GET | Página da pilha tecnológica |
 
@@ -121,14 +116,10 @@ contactsApp_data/
 ├── routes/              # Manipuladores de rotas
 │   ├── index.js
 │   ├── all.js
-│   ├── single.js
-│   ├── add.js
 │   ├── form.js
 │   ├── delete.js
 │   ├── toggle_favorito.js
 │   ├── help.js
-│   ├── privacy.js
-│   ├── cookies.js
 │   ├── team.js
 │   └── stack.js
 ├── views/               # Templates EJS
@@ -139,7 +130,8 @@ contactsApp_data/
 │       ├── header.ejs
 │       ├── footer.ejs
 │       ├── card.ejs
-│       └── content.ejs
+│       ├── row.ejs
+│       └── table.ejs
 ├── src/
 │   └── dao/
 │       └── contactsDAO.js  # Operações de banco de dados
@@ -150,22 +142,7 @@ contactsApp_data/
 └── .env                # Variáveis de ambiente (não versionado)
 ```
 
-<!-- ## Métodos da API
-
-### Métodos ContactsDAO
-
-- `getContacts(client)` - Recuperar todos os contatos (limitado a 10)
-- `insertContact(client, doc)` - Adicionar novo contato
-- `deleteContactByNome(client, nome)` - Deletar contato por nome
-- `updateTelefoneByEmail(client, email, tel)` - Atualizar telefone por email
-- `updateTelefoneByEmail_v2(client, email, tel)` - Método alternativo de atualização
-- `toggleFavoritoByNome(client, nome)` - Alternar status de favorito
-
-## 🌐 Parâmetros de Query
-
-- `/toggle_favorito?nome=<nome_do_contato>` - Alternar favorito para o contato especificado -->
-
-### Notas
+### Observações
 
 - A aplicação usa cookie-parser para gerenciamento de sessão
 - Morgan está configurado para log de requisições HTTP
