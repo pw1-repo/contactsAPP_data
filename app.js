@@ -16,7 +16,6 @@ MongoClient.connect(uri)
 var indexRouter = require('./routes/index');
 var allRouter = require('./routes/all');
 var helpRouter = require('./routes/help');
-var privacyRouter = require('./routes/privacy');
 var deleteRouter = require('./routes/delete');
 var formRouter = require('./routes/form');
 var toggleFavoritoRouter = require('./routes/toggle_favorito');
@@ -39,7 +38,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/all', allRouter);
 app.use('/help', helpRouter);
-app.use('/privacy', privacyRouter);
 app.use('/delete', deleteRouter);
 app.use('/form', formRouter);
 app.use('/toggle_favorito', toggleFavoritoRouter);
