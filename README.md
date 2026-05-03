@@ -1,4 +1,4 @@
-![](/images/cover_banner.svg)
+![](/public/images/cover_banner.svg)
 
 # contactsApp
 
