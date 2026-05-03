@@ -1,8 +1,11 @@
 ![](/public/images/cover_banner.svg)
 
-# contactsApp
+# Programação Web 1 
+Prof. José Roberto Bezerra
 
-Aplicação de demonstração utilizada na disciplina Programação Web 1 . Permite aos usuários:
+### Introdução
+
+Aplicação de demonstração `contactsApp` utilizada na disciplina Programação Web 1. Permite aos usuários:
 - Visualizar todos os contatos em um layout de grade ou tabela
 - Adicionar novos contatos
 - Editar contatos existentes
