@@ -1,9 +1,13 @@
 <%- include('partials/header') %>
-<div class="container-md bg-dark text-white">
-  <main>
-    <h1><%= title%></h1>
-    <div class="container text-center m-10">
-        <%- msg %>
-    </div>
-</div>
-<%- include('partials/footer') %>
+  <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+    <h1 class="display-4 fw-normal text-body-emphasis">
+      
+    </h1>
+    <% if (error) { %>
+      <div class="alert alert-danger" role="alert">
+    <% } else { %>  
+    <div class="alert alert-primary" role="alert">
+    <% } %>
+    <%= msg %></div>
+  </div>
+  <%- include('partials/footer') %>

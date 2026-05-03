@@ -3,26 +3,26 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-require('dotenv').config();
+require('dotenv').config( {quiet: true} );
 const { MongoClient } = require("mongodb");
 const uri = process.env.URI;
 
 MongoClient.connect(uri)
 .then(client => {
-  const db = client.db("mydb");
-  const mydb = db.collection("contacts");
-  app.locals.mydb = mydb;
+  const db = client.db("mydb").collection("contacts");
+  app.locals.db = db;
 });
 
 var indexRouter = require('./routes/index');
 var allRouter = require('./routes/all');
-var singleRouter = require('./routes/single');
-var addRouter = require('./routes/add');
 var helpRouter = require('./routes/help');
 var privacyRouter = require('./routes/privacy');
-var cookiesRouter = require('./routes/cookies');
 var deleteRouter = require('./routes/delete');
 var formRouter = require('./routes/form');
+var toggleFavoritoRouter = require('./routes/toggle_favorito');
+var teamRouter = require('./routes/team');
+var stackRouter = require('./routes/stack');
+var favoritesRouter = require('./routes/favorites');
 
 var app = express();
 
@@ -38,13 +38,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/all', allRouter);
-app.use('/single', singleRouter);
-app.use('/add', addRouter);
 app.use('/help', helpRouter);
 app.use('/privacy', privacyRouter);
-app.use('/cookies', cookiesRouter);
 app.use('/delete', deleteRouter);
 app.use('/form', formRouter);
+app.use('/toggle_favorito', toggleFavoritoRouter);
+app.use('/team', teamRouter);
+app.use('/stack', stackRouter);
+app.use('/favorites', favoritesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

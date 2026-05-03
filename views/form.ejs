@@ -1,37 +1,50 @@
 <%- include('partials/header') %>
-<div class="container-md bg-dark text-white">
-  <main>
-    <h1><%= title%></h1>
-    <div class="container m-10">
-      <p class="display-6">Adicionar Contato</p>
-      <form action="/form" method="post" class="row align-items-center">
-        <div class="col-auto">
-          <label for="nome" class="form-label">Nome</label>
-          <input type="text" class="form-control col-sm-10" id="nome" name="nome" value="<%= contact.nome%>" aria-describedby="nomeHelp">
-          <div id="nomeHelp" class="form-text">Nome completo do contato.</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card shadow-lg mt-4">
+        <div class="card-header bg-primary text-white">
+          <h5 class="card-title mb-0">Editar Contato</h5>
         </div>
-        <div class="col-auto">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control col-sm-10" id="email1" name="email" value="<%= contact.email%>" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">Email do contato.</div>
+        <div class="card-body p-4">
+          <form action="/form" method="post">
+            <input type="hidden" class="form-control form-control-lg" id="_id" name="_id" value="<%= contact._id %>" required>
+            <div class="mb-3">
+              <label for="nome" class="form-label fw-semibold">Nome Completo</label>
+              <input type="text" class="form-control form-control-lg" id="nome" name="nome" value="<%= contact.nome %>" required>
+              <small class="form-text text-muted">Nome completo do contato.</small>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label fw-semibold">Email</label>
+              <input type="email" class="form-control form-control-lg" id="email" name="email" value="<%= contact.email %>" required>
+              <small class="form-text text-muted">Email do contato.</small>
+            </div>
+
+            <div class="mb-3">
+              <label for="telefone" class="form-label fw-semibold">Telefone</label>
+              <input type="text" class="form-control form-control-lg" id="telefone" name="telefone" value="<%= contact.telefone %>" placeholder="(xx) xxxxx-xxxx" required>
+              <small class="form-text text-muted">Telefone do contato.</small>
+            </div>
+
+            <div class="mb-4">
+              <div class="form-check form-switch">
+                <% let checked = contact.favorito ? "checked" : "" %>
+                <input class="form-check-input" type="checkbox" id="favorito" name="favorito" <%= checked %>>
+                <label class="form-check-label fw-semibold" for="favorito">Marcar como favorito</label>
+              </div>
+            </div>
+
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              <button type="submit" class="btn btn-primary btn-lg px-4">Enviar</button>
+              <button type="button" class="btn btn-outline-secondary btn-lg px-4" id="resetBtn">Limpar</button>
+            </div>
+          </form>
         </div>
-        <div class="col-auto">
-          <label for="fone" class="form-label">Fone</label>
-          <input type="text" class="form-control col sm-10" id="fone" name="telefone" value="<%= contact.telefone%>" aria-describedby="foneHelp">
-          <div id="foneHelp" class="form-text">Telefone do contato.</div>
-        </div>
-        <div class="col-auto form-check">
-          <% let checked = contact.favorito ? "checked" : "" %>
-          <input type="checkbox" class="form-check-input" id="favorito" name="favorito" <%= checked %>>
-          <label class="form-check-label" for="favorito">Favorito?</label>
-        </div>
-        <div class="row">
-          <div class="col-auto">
-            <button type="submit" class="btn btn-primary">Enviar</button>
-            <button type="reset" class="btn btn-primary">Limpar</button>
-          </div>
-        </div>
-      </form>
+      </div>
     </div>
+  </div>
 </div>
+
 <%- include('partials/footer') %>

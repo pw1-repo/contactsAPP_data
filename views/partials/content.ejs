@@ -1,49 +1,67 @@
-<!-- content -->
-    <div class="container-md bg-dark text-white">
-        <main>
-          <h1><%= title%></h1>
-          <div class="container text-center">
-            <!-- contact cards  -->
-            <!-- sample card    -->
-            <div class="row align-items-center p-3">
-              <div class="col">
-                <div class="card" style="width: 12rem;">
-                  <div class="card-body">
-                    <h5 class="card-title">Contact name</h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">Family name</h6>
-                    <p class="card-text">
-                      Fone: (xx) xxxx-xxxx<br>
-                      Email: 
-                    </p>
-                    <a href="#" class="card-link">Card link</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- pagination -->
-            <div class="row mt-4 pb-3">
-              <div class="col">
-                <nav aria-label="Navegação de páginas">
-                  <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-                    </li>
-                    <li class="page-item active" aria-current="page">
-                      <a class="page-link" href="#">1</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">2</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">3</a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" href="#">Próxima</a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </main>
+
+
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Free</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">
+          $0<small class="text-body-secondary fw-light">/mo</small>
+        </h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>10 users included</li>
+          <li>2 GB of storage</li>
+          <li>Email support</li>
+          <li>Help center access</li>
+        </ul>
+        <button type="button" class="w-100 btn btn-lg btn-outline-primary">
+          Sign up for free
+        </button>
+      </div>
     </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Pro</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">
+          $15<small class="text-body-secondary fw-light">/mo</small>
+        </h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>20 users included</li>
+          <li>10 GB of storage</li>
+          <li>Priority email support</li>
+          <li>Help center access</li>
+        </ul>
+        <button type="button" class="w-100 btn btn-lg btn-primary">
+          Get started
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+      <div class="card-header py-3 text-bg-primary border-primary">
+        <h4 class="my-0 fw-normal">Enterprise</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">
+          $29<small class="text-body-secondary fw-light">/mo</small>
+        </h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>30 users included</li>
+          <li>15 GB of storage</li>
+          <li>Phone and email support</li>
+          <li>Help center access</li>
+        </ul>
+        <button type="button" class="w-100 btn btn-lg btn-primary">
+          Contact us
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
